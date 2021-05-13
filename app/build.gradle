@@ -38,13 +38,15 @@ android {
 }
 
 dependencies {
+    implementation project(path: ':term_emulatorview')
+    implementation project(path: ':term_libtermexec')
 
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
     implementation 'androidx.core:core-ktx:1.3.2'
     implementation 'androidx.appcompat:appcompat:1.2.0'
     implementation 'com.google.android.material:material:1.3.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
-    
+
     def navigation_ver = "2.3.5"
     implementation "androidx.navigation:navigation-fragment-ktx:$navigation_ver"
     implementation "androidx.navigation:navigation-ui-ktx:$navigation_ver"

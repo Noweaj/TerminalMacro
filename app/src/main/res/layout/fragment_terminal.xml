@@ -1,14 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout
-    xmlns:android="http://schemas.android.com/apk/res/android">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="viewModel"
+            type="com.noweaj.android.terminalmacro.ui.terminal.TerminalViewModel" />
+    </data>
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
         <TextView
+            android:id="@+id/tv_terminal_console"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center"
-            android:text="Terminal"/>
+            android:layout_height="0dp"
+            android:padding="20dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/ll_terminal_command"
+            android:gravity="bottom"/>
+        
+        <LinearLayout
+            android:id="@+id/ll_terminal_command"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <EditText
+                android:id="@+id/et_terminal_input"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"/>
+
+            <Button
+                android:id="@+id/b_terminal_enter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ENTER"
+                android:onClick="@{(v)->viewModel.onClick(v)}"/>
+            
+        </LinearLayout>
+        
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

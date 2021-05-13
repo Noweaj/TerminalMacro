@@ -1,2 +1,4 @@
 include ':app'
+include ':term_libtermexec'
+include ':term_emulatorview'
 rootProject.name = "TerminalMacro"
