@@ -63,4 +63,14 @@ class DashboardFragment: Fragment() {
         super.onResume()
         binding.viewModel!!.updateMacroEntities()
     }
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        Log.d(TAG, "onCreate")
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        Log.d(TAG, "onDestroy")
+    }
 }
